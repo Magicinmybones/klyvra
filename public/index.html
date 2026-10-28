@@ -238,6 +238,29 @@ svg{display:block;overflow:visible}
   .product{grid-area:1/2/6/3;align-self:center;width:122.36%;margin:0 0 0 -.77%;padding:0}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* One first-load sequence; the dotted page background does not move. */
+@keyframes klyvra-quiet{
+  from{opacity:0;transform:translate3d(0,7px,0)}
+  to{opacity:1;transform:none}
+}
+@keyframes klyvra-type{
+  from{clip-path:inset(0 0 100% 0);transform:translate3d(0,13px,0)}
+  to{clip-path:inset(0 0 0 0);transform:none}
+}
+@keyframes klyvra-product{
+  from{opacity:0;transform:translate3d(0,10px,0) scale(.985)}
+  to{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .header .logo{animation:klyvra-quiet .54s cubic-bezier(.22,1,.36,1) .05s backwards}
+  .header .links{animation:klyvra-quiet .54s cubic-bezier(.22,1,.36,1) .12s backwards}
+  .header .actions{animation:klyvra-quiet .54s cubic-bezier(.22,1,.36,1) .18s backwards}
+  .headline .l1{animation:klyvra-type .82s cubic-bezier(.19,1,.22,1) .2s backwards}
+  .headline .l2{animation:klyvra-type .82s cubic-bezier(.19,1,.22,1) .34s backwards}
+  .sub{animation:klyvra-quiet .62s cubic-bezier(.22,1,.36,1) .62s backwards}
+  .cta{animation:klyvra-quiet .62s cubic-bezier(.22,1,.36,1) .85s backwards}
+  .product{animation:klyvra-product .9s cubic-bezier(.22,1,.36,1) .42s backwards}
+}
 </style>
 </head>
 <body>
